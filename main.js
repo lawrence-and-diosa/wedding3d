@@ -31,13 +31,14 @@ TABLE(scene,matv, .25);
 MUSIC();
 MAP();FB();
 
+camera.fov=50
 if(window.innerWidth<window.innerHeight){
 arr=[1,2,3,4,5,6,7];
 arr2=[0,0,0,0,0,0,8];
 BOOK(arr,arr2,-.4, matv);
 camera.position.set(0,0,3);
 camera.translateY(-.1);
-camera.zoom=.8
+//camera.zoom=.8
 }
 else if(window.innerWidth>window.innerHeight){
 arr= [1,2,4,6,8];
@@ -47,7 +48,7 @@ arr2=[2,4,6,8];
 BOOK(arr,arr2,0, matv);
 camera.position.set(0,0,2);
 camera.translateY(-.1);
-camera.zoom=1.25
+//camera.zoom=1.25
 }
 
 
