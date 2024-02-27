@@ -68,6 +68,11 @@ HIDEDESK(help);
 drk.position.z=-999;
 },1000*5);
     
+help.width='100%';
+help.height='100%';
+help.style.position='absolute';
+help.style.left='0%';
+help.style.top='0%';
     
     
     
