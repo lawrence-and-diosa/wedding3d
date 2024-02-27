@@ -6,7 +6,7 @@ var d = 1;
 camera = new THREE.OrthographicCamera( - d * aspect, d * aspect, d, - d, 1, 1000 );
 scene=new THREE.Scene();
 renderer=new THREE.WebGLRenderer({alpha:true});
-renderer.setPixelRatio(window.devicePixelRatio*2);
+renderer.setPixelRatio(window.devicePixelRatio*1);
 renderer.setSize( window.innerWidth, window.innerHeight);
 container=document.createElement('div'); 
 document.body.appendChild(container);
