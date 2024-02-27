@@ -18,9 +18,9 @@ num=-1;
 var pgs=[];
 PAGE=function(str,str2){
 I=pgs.length;
-gm=new THREE.PlaneGeometry(1,1*1.4,2,1);
+gm=new THREE.PlaneGeometry(1,1*1.3,2,1);
 gm.translate(.5,0,0);
-gmm=new THREE.PlaneGeometry(1,1*1.4,2,1);
+gmm=new THREE.PlaneGeometry(1,1*1.3,2,1);
 gmm.translate(.5,0,0);
 gm.merge(gmm);
 gm.verticesNeedUpdate=true;

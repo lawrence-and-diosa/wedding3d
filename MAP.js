@@ -1,7 +1,12 @@
 MAP=function(){
     
 
-    
+gm=new THREE.PlaneGeometry(10,10);
+mt=new THREE.MeshBasicMaterial({color:0x000000,opacity:.5,transparent:true});
+drk=new THREE.Mesh(gm,mt);
+scene.add(drk);
+drk.position.z=-99;
+
     
     
     
@@ -12,7 +17,7 @@ elm.height='100%';
 elm.style.position='absolute';
 elm.style.left='25%';
 elm.style.top='0%';
-elm.style.textAlign='center';
+//elm.style.textAlign='center';
 }
 HIDEDESK=function(elm){
 elm.width='0%';
@@ -20,7 +25,7 @@ elm.height='0%';
 elm.style.position='absolute';
 elm.style.left='-9999%';
 elm.style.top='-9999%';
-elm.style.textAlign='center';
+//elm.style.textAlign='center';
 }
 SHOWMOB=function(elm){
 elm.width='100%';
@@ -28,22 +33,28 @@ elm.height='50%';
 elm.style.position='absolute';
 elm.style.left='0%';
 elm.style.top='25%';
-elm.style.textAlign='center';
+//elm.style.textAlign='center';
 }
-HIDEMOB=function(){
-elm.width='0%';
-elm.height='0%';
-elm.style.position='absolute';
-elm.style.left='-9999%';
-elm.style.top='-9999%';
-elm.style.textAlign='center';
-}
+HIDEMOB=HIDEDESK;
 
+
+
+
+
+
+
+
+
+
+
+
+//HELP
 help=document.createElement('div');
 document.body.appendChild(help);
 imgv=new Image();
 imgv.src='res/help.png';
 help.appendChild(imgv);
+help.width= help.height='100%'
 //document.body.appendChild(help);
 if(window.innerWidth>window.innerHeight){
 SHOWDESK(help);
@@ -51,16 +62,25 @@ SHOWDESK(help);
 else{
 SHOWMOB(help);
 }
+drk.position.z=.4;
 setTimeout(function(){
 HIDEDESK(help);
+drk.position.z=-999;
 },1000*5);
     
+    
+    
+    
+/*
+zoom=document.createElement('div');
+document.body.appendChild(zoom);
+imgv=new Image();
+imgv.src='res/tap.png';
+zoom.appendChild(imgv);
+zoom.width= help.height='100%'
+zoom.zIndex=99999
+*/
 
-gm=new THREE.PlaneGeometry(10,10);
-mt=new THREE.MeshBasicMaterial({color:0x000000,opacity:.5,transparent:true});
-drk=new THREE.Mesh(gm,mt);
-scene.add(drk);
-drk.position.z=-99;
 
 
 
@@ -72,7 +92,7 @@ document.body.appendChild(map);
 map.style='z-index:9999;scrolling:no;border:0;allowfullscreen:;loading:"lazy";referrerpolicy:no-referrer-when-downgrade;';
 HIDEDESK(map);
 
-gm=new THREE.PlaneGeometry(.3,.3);
+gm=new THREE.PlaneGeometry(.2,.2);
 txd=new THREE.ImageUtils.loadTexture('res/iconmap.png');
 mt=new THREE.MeshBasicMaterial({map:txd,alphaTest:.5});
 mshwz=new THREE.Mesh(gm,mt);
@@ -100,7 +120,7 @@ if(window.innerWidth>window.innerHeight){
 mshwz.position.set(0,0,.5);
 setInterval(function(){
 if(num==0){
-mshwz.position.x+=((1.2-mshwz.position.x)*.05);
+mshwz.position.x+=((.75-mshwz.position.x)*.05);
 }
 else{
 mshwz.position.x+=((5-mshwz.position.x)*.05);
@@ -111,7 +131,7 @@ else{
 mshwz.position.set(0,0,.5);
 setInterval(function(){
 if(num==1){
-mshwz.position.y+=((-1-mshwz.position.y)*.05);
+mshwz.position.y+=((-.8-mshwz.position.y)*.05);
 }
 else{
 mshwz.position.y+=((-5-mshwz.position.y)*.05);
@@ -130,12 +150,21 @@ FB=function(){
 
 str=`
 <font color=black>
-<h2>
+<h3>
+
 <a href='https://www.facebook.com/LNJ.Mariano'>
-LN JM</a><br>
+<image src='res/iconfb.png' width=3%>
+
+LN JM - https://www.facebook.com/LNJ.Mariano</a>
+<br><br>
 <a href='https://www.facebook.com/profile.php?id=61550971187932'>
-Dio Dionicio</a><br>
+<image src='res/iconfb.png' width=3%>
+
+Dio Dionicio - https://www.facebook.com/profile.php?id=61550971187932</a>
+<br><br>
 <a>+639506537139</a>
+
+
 </font>
 `;
 fb=document.createElement('div');
@@ -144,7 +173,7 @@ HIDEDESK(fb);
 fb.innerHTML=str;
 
 
-gm=new THREE.PlaneGeometry(.3,.3);
+gm=new THREE.PlaneGeometry(.2,.2);
 txd=new THREE.ImageUtils.loadTexture('res/iconfb.png');
 mt=new THREE.MeshBasicMaterial({map:txd,alphaTest:.5});
 mshrs=new THREE.Mesh(gm,mt);
@@ -173,7 +202,7 @@ if(window.innerWidth>window.innerHeight){
 mshrs.position.set(0,0,.5);
 setInterval(function(){
 if(num==2){
-mshrs.position.x+=((1.2-mshrs.position.x)*.05);
+mshrs.position.x+=((.8-mshrs.position.x)*.05);
 }
 else{
 mshrs.position.x+=((5-mshrs.position.x)*.05);
@@ -185,7 +214,7 @@ else{
 mshrs.position.set(0,0,.5);
 setInterval(function(){
 if(num==5){
-mshrs.position.y+=((-1-mshrs.position.y)*.05);
+mshrs.position.y+=((-.75-mshrs.position.y)*.05);
 }
 else{
 mshrs.position.y+=((-5-mshrs.position.y)*.05);

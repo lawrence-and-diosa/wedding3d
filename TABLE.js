@@ -5,7 +5,7 @@ TABLE=function(scenev,mainMaterial2,  sz){
 
 
 //table
-gm=new THREE.PlaneGeometry(4,4);
+gm=new THREE.PlaneGeometry(5,5);
 //if(isPortrait){gm.rotateZ(-Math.PI/2);}
 gm.translate(0,0,-.5);
 txd=new THREE.ImageUtils.loadTexture('res/table.png');
